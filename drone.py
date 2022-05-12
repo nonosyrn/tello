@@ -3,10 +3,9 @@ from time import sleep
 
 tello = tello.Tello()
 
-print(me.get_battery())
-
 #Starting up
 tello.connect()
+print(tello.get_battery())
 tello.takeoff()
 tello.move_up(120)
 sleep(0.2)
@@ -32,6 +31,8 @@ tello.move_back(300)
 #Landing
 tello.rotate_clockwise(90)
 sleep(0.1)
-tello.moveforward(400)
+tello.move_forward(400)
+sleep(1)
+tello.land()
 sleep(1)
 tello.land()
